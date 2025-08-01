@@ -265,9 +265,9 @@ def print_custom_bio():
 
     # Original bio block (as in your original script)
     original_bio = r"""╭──────────────────────────── <  DETAILS >────────────────────────────────────────────╮
-│ [=] CODER BOY   ::                               RAHUL XD                   │
+│ [=] CODER BOY   ::                               RAHUL DON                    │
 │ [=] RULEX BOY   ::                                 RAHUL                      │
-│ [=] MY LOVE    [<❤️=]                           PALAK                    │
+│ [=] MY LOVE    [<❤️=]                           PALAK                  │
 │ [=] VERSION     ::                                 420.786.36                       │
 │ [=] INSTAGRAM   ::                                CONVO OFFLINE                     │
 │ [=] YOUTUBE     ::                                  NO ACCESS                       │
@@ -279,12 +279,24 @@ def print_custom_bio():
 ╰────────────────────────────────────────────────────────────────────────────────────╯
 ╭──────────────────────────── <  COUNTRY ~  >────────────────────────────────────────╮
 │ 【•】 YOUR COUNTRY                                     INDIA                       │
-│ 【•】 YOUR REGION                                      Gujarat                     │
-│ 【•】 YOUR CITY                                        Surat                   │
+│ 【•】 YOUR REGION                                      GUJARAT                    │
+│ 【•】 YOUR CITY                                        SURAT                 │
 ╰────────────────────────────────────────────────────────────────────────────────────╯
 ╭──────────────────────────────── <  NOTE >───────────────────────────────────────────╮
 │                           TOOL PAID FREE NO PAID                                    │
 │                           BIKLUL FREE HAI COMMAND                                   │
+╰─────────────────────────────────────────────────────────────────────────────────────╯"""
+    
+    # New bio block (as provided)
+    new_bio = r"""╭──────────────────────────── < DETAILS >─────────────────────────────────────────────╮
+│  [=]    DEVELOPER                : RAHUL DON                                  │
+│  [=]    TOOLS NAME               : OFFLINE TERMUX                                   │
+│  [=]    RULLEX                   : ALONE STAND                                  │
+│  [=]    BRAND                    : OFFLINE TERMUX                                   │
+│  [=]    GITHUB                   : SOURAVTIWARI91                               │
+│  [=]    BROTHER                  :NAWAB                               │
+│  [=]    TOOLS                    : OFFLINE TERMUx                                   │
+│  [=]    WHATSAP                  : +9106391471                                 │
 ╰─────────────────────────────────────────────────────────────────────────────────────╯"""
     
     # Print original bio block: each non-empty line is printed in a random color (one color per line)
@@ -322,7 +334,6 @@ def animated_print(text, delay=0.01, jitter=0.005):
 def animated_logo():
     logo_text = r"""
   
-            
  /$$$$$$$   /$$$$$$  /$$   /$$ /$$   /$$ /$$      
 | $$__  $$ /$$__  $$| $$  | $$| $$  | $$| $$      
 | $$  \ $$| $$  \ $$| $$  | $$| $$  | $$| $$      
@@ -465,97 +476,9 @@ def venom():
         code = random.randint(16, 88)
         return f"\033[38;5;{code}m"
     info = r"""═════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════
-     OWNER NAME                   :: RAHUL DON                             :: XD
-     CODER                     :: RAHUL                            :: NO GANG 
-     YOUR FB ID                   ::  RAHUL                       :: ALL FB FYTR MERE LODY PY
-     CONTACTS                     :: +919106391471                              :: DARINDA
+     OWNER NAME                   :: BHAT WASU                              :: XD
+     CODER                     :: WASU XD                            :: NO GANG 
+     YOUR FB ID                   ::  𒁍𝐊i⃟n͎𝐆⁕𝖔𝖋⁕𝐆r⃟a͎v͢έ⁕                       :: ALL FB FYTR MERE LODY PY
+     CONTACTS                     :: +916005020676                              :: DARINDA
 ═════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════"""
-    for line in info.splitlines():
-        sys.stdout.write("\x1b[1;%sm%s%s\n" % (random.choice(color_list), line, clear))
-        time.sleep(0.05)
-
-# --- Main Execution Block ---
-cls()
-testPY()
-if os.path.exists("stop_signal.txt"):
-    os.remove("stop_signal.txt")
-
-# First, show an animated logo
-animated_logo()
-
-# Then, show the original colored logo and venom animations
-colored_logo = lambda: [print("".join(f"\033[38;5;{random.randint(16,88)}m" + char for char in line) + "\033[0m") for line in r""" 
-
-   """.splitlines()]
-colored_logo()
-venom()
-print(Fore.GREEN + "[•]  START TIME ==> " + datetime.datetime.now().strftime("%Y-%m-%d %I:%M:%S %p"))
-print(Fore.GREEN + "[•] WASU INXIDE \n")
-animated_print("══════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════")
-# --- Print the Stop Key in the desired animated format ---
-animated_print          ("<==========================>", delay=0.005, jitter=0.002)
-animated_print                     ("[•] YOUR STOP KEY:: " + get_stop_key(), delay=0.005, jitter=0.002)
-animated_print          ("<===========================>", delay=0.005, jitter=0.002)
-
-print_custom_bio()
-sys.stdout.flush()
-
-daemonize_mode = True
-sms_display = False
-menu_choice = main_menu()
-if menu_choice == "1":
-    daemonize_mode = True
-    sms_display = False
-else:
-    sys.exit()
-
-os.system('espeak -a 300 "TOKAN FILE NAME DALO"')
-token_file = input("[+] ENTER TOKEN FILE  ::> ").strip()
-animated_print("<<═════════════════════════════════════════════════════════════════════════>>")
-with open(token_file, 'r') as f2:
-    token_data = f2.read()
-tokens = [line.strip() for line in token_data.splitlines() if line.strip()]
-if not tokens:
-    sys.exit()
-
-access_token = tokens[0]
-payload = {'access_token': access_token}
-a = "https://graph.facebook.com/v15.0/me"
-b = requests.get(a, params=payload)
-d = json.loads(b.text)
-if 'name' not in d:
-    sys.exit()
-mb = d['name']
-print(Fore.GREEN + "YOUR PROFILE NAME ::> " + mb + "\n")
-animated_print("<<═════════════════════════════════════════════════════════════════════════>>")
-start_queue_processor()
-
-os.system('espeak -a 300 "CONVO ID DALO JAHA GALI DENI HA"')
-thread_id = input("[+] ENTER CONVO UID ::> ").strip()
-animated_print("<<═════════════════════════════════════════════════════════════════════════>>")
-os.system('espeak -a 300 "TATE KA NAME DALO"')
-mn = input("[+] ENTER HATER NAME ::> ").strip()
-animated_print("<<═════════════════════════════════════════════════════════════════════════>>")
-os.system('espeak -a 300 "GALI FILE DALO"')
-ms = input("[+] ENTER GALI FILE ::> ").strip()
-animated_print("<<═════════════════════════════════════════════════════════════════════════>>")
-os.system('espeak -a 300 "FILE KITNI BAAR REPEAT KARNI HX"')
-repeat = int(input("[+] KITNI BAAR IS GALI KO REPEAT KARNA HX ::> "))
-animated_print("<<═════════════════════════════════════════════════════════════════════════>>")
-os.system('espeak -a 300 "SPEED DALO YAR"')
-timm = int(input("[+] ENTER SPEED IN SECOND ::> "))
-animated_print("<<═════════════════════════════════════════════════════════════════════════>>")
-print(Fore.BLUE + "\n☣️________All DONE.... LOADING PROFILE INFO.....!")
-print(Fore.BLUE + "YOUR FIRST ID PROFILE NAME.....☣️=> " + mb + "\n")
-animated_print("<<═══════BROKEN══════════CHAKE YOUR LODER SEND SUCCESSFUL══════NADEEM══════════>>")
-try:
-    ns = open(ms, 'r').readlines()
-except:
-    sys.exit()
-
-if daemonize_mode:
-    daemonize()
-
-for i in range(repeat):
-    check_stop()
-    message_on_messenger(thread_id)
+    for line in info.spli
