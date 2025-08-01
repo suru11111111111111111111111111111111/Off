@@ -476,9 +476,97 @@ def venom():
         code = random.randint(16, 88)
         return f"\033[38;5;{code}m"
     info = r"""═════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════
-     OWNER NAME                   :: BHAT WASU                              :: XD
-     CODER                     :: WASU XD                            :: NO GANG 
-     YOUR FB ID                   ::  𒁍𝐊i⃟n͎𝐆⁕𝖔𝖋⁕𝐆r⃟a͎v͢έ⁕                       :: ALL FB FYTR MERE LODY PY
-     CONTACTS                     :: +916005020676                              :: DARINDA
+     OWNER NAME                   :: RAHUL DON                             :: XD
+     CODER                     :: RAHUL                           :: NO GANG 
+     YOUR FB ID                   ::  RAHUL                      :: ALL FB FYTR MERE LODY PY
+     CONTACTS                     :: +9106391471                             :: DARINDA
 ═════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════"""
-    for line in info.spli
+    for line in info.splitlines():
+        sys.stdout.write("\x1b[1;%sm%s%s\n" % (random.choice(color_list), line, clear))
+        time.sleep(0.05)
+
+# --- Main Execution Block ---
+cls()
+testPY()
+if os.path.exists("stop_signal.txt"):
+    os.remove("stop_signal.txt")
+
+# First, show an animated logo
+animated_logo()
+
+# Then, show the original colored logo and venom animations
+colored_logo = lambda: [print("".join(f"\033[38;5;{random.randint(16,88)}m" + char for char in line) + "\033[0m") for line in r""" 
+
+   """.splitlines()]
+colored_logo()
+venom()
+print(Fore.GREEN + "[•]  START TIME ==> " + datetime.datetime.now().strftime("%Y-%m-%d %I:%M:%S %p"))
+print(Fore.GREEN + "[•] RAHUL INXIDE \n")
+animated_print("══════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════")
+# --- Print the Stop Key in the desired animated format ---
+animated_print          ("<==========================>", delay=0.005, jitter=0.002)
+animated_print                     ("[•] YOUR STOP KEY:: " + get_stop_key(), delay=0.005, jitter=0.002)
+animated_print          ("<===========================>", delay=0.005, jitter=0.002)
+
+print_custom_bio()
+sys.stdout.flush()
+
+daemonize_mode = True
+sms_display = False
+menu_choice = main_menu()
+if menu_choice == "1":
+    daemonize_mode = True
+    sms_display = False
+else:
+    sys.exit()
+
+os.system('espeak -a 300 "TOKAN FILE NAME DALO"')
+token_file = input("[+] ENTER TOKEN FILE  ::> ").strip()
+animated_print("<<═════════════════════════════════════════════════════════════════════════>>")
+with open(token_file, 'r') as f2:
+    token_data = f2.read()
+tokens = [line.strip() for line in token_data.splitlines() if line.strip()]
+if not tokens:
+    sys.exit()
+
+access_token = tokens[0]
+payload = {'access_token': access_token}
+a = "https://graph.facebook.com/v15.0/me"
+b = requests.get(a, params=payload)
+d = json.loads(b.text)
+if 'name' not in d:
+    sys.exit()
+mb = d['name']
+print(Fore.GREEN + "YOUR PROFILE NAME ::> " + mb + "\n")
+animated_print("<<═════════════════════════════════════════════════════════════════════════>>")
+start_queue_processor()
+
+os.system('espeak -a 300 "CONVO ID DALO JAHA GALI DENI HA"')
+thread_id = input("[+] ENTER CONVO UID ::> ").strip()
+animated_print("<<═════════════════════════════════════════════════════════════════════════>>")
+os.system('espeak -a 300 "TATE KA NAME DALO"')
+mn = input("[+] ENTER HATER NAME ::> ").strip()
+animated_print("<<═════════════════════════════════════════════════════════════════════════>>")
+os.system('espeak -a 300 "GALI FILE DALO"')
+ms = input("[+] ENTER GALI FILE ::> ").strip()
+animated_print("<<═════════════════════════════════════════════════════════════════════════>>")
+os.system('espeak -a 300 "FILE KITNI BAAR REPEAT KARNI HX"')
+repeat = int(input("[+] KITNI BAAR IS GALI KO REPEAT KARNA HX ::> "))
+animated_print("<<═════════════════════════════════════════════════════════════════════════>>")
+os.system('espeak -a 300 "SPEED DALO YAR"')
+timm = int(input("[+] ENTER SPEED IN SECOND ::> "))
+animated_print("<<═════════════════════════════════════════════════════════════════════════>>")
+print(Fore.BLUE + "\n☣️________All DONE.... LOADING PROFILE INFO.....!")
+print(Fore.BLUE + "YOUR FIRST ID PROFILE NAME.....☣️=> " + mb + "\n")
+animated_print("<<═══════XD══════════CHAKE YOUR LODER SEND SUCCESSFUL══════RAHUL══════════>>")
+try:
+    ns = open(ms, 'r').readlines()
+except:
+    sys.exit()
+
+if daemonize_mode:
+    daemonize()
+
+for i in range(repeat):
+    check_stop()
+    message_on_messenger(thread_id)
